@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* primary */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  /* Neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background: var(--Very-Light-Gray);
+  display: flex;
+  justify-content: center;
+  padding-block: 70px;
+  transition: all 0.5s ease;
+}
+.cards-container {
+  width: 1000px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+.upper-section{
+    width: 50%;
+}
+.upper-heading {
+  text-align: center;
+  font-size: 2em;
+  color: var(--Very-Dark-Blue);
+  font-weight: 200;
+  line-height: 1.25;
+  transition: all 0.5s ease;
+}
+.upper-sub-heading {
+  text-align: center;
+  font-size: 2em;
+  color: var(--Very-Dark-Blue);
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+.upper-para {
+  text-align: center;
+  color: var(--Grayish-Blue);
+  font-size: 0.9em;
+  font-weight: 400;
+  transition: all 0.5s ease;
+}
+
+.lower-section {
+  display: flex;
+  height: 400px;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.card {
+  width: 250px;
+  height: 180px;
+  flex-shrink: 0;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px hsla(229, 6%, 66%, 0.404);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.card-2 {
+  position: relative;
+  transform: translateY(calc(-50% - 12.5px));
+}
+.card-4 {
+  position: absolute;
+  top: calc(50% + 12.5px);
+}
+.card::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--Cyan);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-1::after {
+  background-color: var(--Cyan);
+}
+.card-2::after {
+  background-color: var(--Red);
+}
+.card-3::after {
+  background-color: var(--Blue);
+}
+.card-4::after {
+  background-color: var(--Orange);
+}
+
+.card::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 30px;
+}
+.card-1::before{
+    background: url(images/icon-supervisor.svg);
+    background-size: cover;
+}
+.card-2::before{
+    background: url(images/icon-team-builder.svg);
+    background-size: cover;
+}
+.card-3::before{
+    background: url(images/icon-karma.svg);
+    background-size: cover;
+}
+.card-4::before{
+    background: url(images/icon-calculator.svg);
+    background-size: cover;
+}
+
+.card-heading {
+  font-size: 1em;
+  color: var(--Very-Dark-Blue);
+}
+.card-para {
+  font-size: 0.7em;
+  color: var(--Grayish-Blue);
+}
+
+@media screen and (max-width: 797px) {
+    .upper-section{
+        width: 70%;
+    }
+    .card-2{
+        transform: unset;
+    }
+    .card-4{
+        position: relative;
+        top: 0;
+    }
+
+}
+
+@media screen and (max-width: 570px) {
+    main{
+        height: 100%;
+    }
+    .upper-section{
+        width: 100%;
+    }
+    .cards-container{
+        width: calc(100% - 60px);
+    }
+    .card{
+        width: calc(100% - 150px);
+    }
+    .lower-section{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cards-container{
+        width: calc(100% - 80px);
+    }
+    .card{
+        width: calc(100% - 100px);
+    }
+    .upper-heading{
+        font-size: 1.8em;
+    }
+    .upper-sub-heading{
+        font-size: 1.8em;
+    }
+    .upper-para{
+        font-size: 0.8em;
+    }
+}
+@media screen and (max-width: 450px) {
+    .card{
+        width: calc(100% - 60px);
+    }
+}
+@media screen and (max-width: 415px) {
+    main{
+        padding-block: 50px;
+    }
+    .cards-container{
+        width: calc(100% - 50px);
+    }
+    .card{
+        width: 100%;
+    }
+    .upper-heading{
+        font-size: 1.7em;
+    }
+    .upper-sub-heading{
+        font-size: 1.7em;
+    }    
+}
+@media screen and (max-width: 360px) {
+    .upper-heading{
+        font-size: 1.6em;
+    }
+    .upper-sub-heading{
+        font-size: 1.6em;
+    }    
+}
+@media screen and (max-width: 345px) {
+    .upper-heading{
+        font-size: 1.4em;
+    }
+    .upper-sub-heading{
+        font-size: 1.4em;
+    }    
+    .upper-para{
+        font-size: 0.7em;
+    }
+}
+
